@@ -207,7 +207,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+  <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
     <source src="videos/flowinhood-hero-v2.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -278,9 +278,17 @@
 <script>
   const vid = document.querySelector('.hero-video');
   if (vid) {
-    const onReady = () => vid.classList.add('loaded');
-    vid.addEventListener('canplay', onReady);
-    vid.addEventListener('loadeddata', onReady);
+    const onReady = () => {
+      vid.classList.add('loaded');
+      if (vid.paused) {
+        vid.play().catch(() => {
+          // iOS Low Data Mode 등 차단 시: 첫 터치에서 재시도
+          document.addEventListener('touchstart', () => vid.play().catch(() => {}), { once: true });
+        });
+      }
+    };
+    vid.addEventListener('canplay', onReady, { once: true });
+    vid.addEventListener('loadeddata', onReady, { once: true });
     if (vid.readyState >= 3) onReady();
   }
 </script>
