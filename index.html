@@ -277,7 +277,12 @@
 
 <script>
   const vid = document.querySelector('.hero-video');
-  if (vid) vid.addEventListener('canplay', () => vid.classList.add('loaded'));
+  if (vid) {
+    const show = () => vid.classList.add('loaded');
+    vid.addEventListener('canplay', show);
+    vid.addEventListener('loadeddata', show);
+    vid.play().then(show).catch(show);
+  }
 </script>
 
 </body>
