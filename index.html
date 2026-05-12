@@ -106,8 +106,7 @@
 
     /* HERO */
     .hero { position:relative; height:67svh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding-top:var(--nav-h); background:var(--ink); overflow:hidden; }
-    .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 1.2s; }
-    .hero-video.loaded { opacity:1; }
+    .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
     .hero-video::-webkit-media-controls { display:none !important; }
     .hero-video::-webkit-media-controls-enclosure { display:none !important; }
     .hero-video::-webkit-media-controls-panel { display:none !important; }
@@ -213,7 +212,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+  <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="videos/hero-poster.jpg">
     <source src="videos/flowinhood-hero-v3.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -284,18 +283,9 @@
 <script>
   const vid = document.querySelector('.hero-video');
   if (vid) {
-    const onReady = () => {
-      vid.classList.add('loaded');
-      if (vid.paused) {
-        vid.play().catch(() => {
-          // iOS Low Data Mode 등 차단 시: 첫 터치에서 재시도
-          document.addEventListener('touchstart', () => vid.play().catch(() => {}), { once: true });
-        });
-      }
-    };
-    vid.addEventListener('canplay', onReady, { once: true });
-    vid.addEventListener('loadeddata', onReady, { once: true });
-    if (vid.readyState >= 3) onReady();
+    vid.play().catch(() => {
+      document.addEventListener('touchstart', () => vid.play().catch(() => {}), { once: true });
+    });
   }
 </script>
 
