@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Flowin' Hood | 흐름공동체</title>
+  <title>About,Flowin' Hood | 흐름공동체</title>
   <meta name="description" content="흐름공동체는 일상 속에서 예수님을 따르는 사람들의 공동체입니다.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://flowinhood.com/about.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://flowinhood.com/about.html">
-  <meta property="og:title" content="About — Flowin' Hood">
+  <meta property="og:title" content="About,Flowin' Hood">
   <meta property="og:description" content="흐름공동체는 일상 속에서 예수님을 따르는 사람들의 공동체입니다.">
   <meta property="og:image" content="https://flowinhood.com/og-image.jpg">
 
@@ -40,7 +40,7 @@
 
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
-    body { background:var(--paper); color:var(--ink); font-family:var(--f-body); font-size:12px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+    body { background:var(--paper); color:var(--ink); font-family:var(--f-body); font-size:12px; line-height:1.45; -webkit-font-smoothing:antialiased; }
     a { text-decoration:none; color:inherit; }
 
     /* NAV */
@@ -62,7 +62,7 @@
     .nav-mobile-close { position:absolute; bottom:24px; left:50%; transform:translateX(-50%); font-family:var(--f-mono); font-size:10px; letter-spacing:0.1em; cursor:pointer; background:none; border:none; color:var(--grey); text-transform:uppercase; }
 
     /* SECTION LABEL */
-    .label { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); display:block; margin-bottom:24px; }
+    .label { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink); font-weight:700; display:block; margin-bottom:12px; }
 
     /* TOP PHOTO */
     .top-photo { width:100%; aspect-ratio:32/9; overflow:hidden; background:var(--mid); position:relative; }
@@ -72,33 +72,37 @@
 
     /* SECTIONS */
     .section { background:var(--paper); padding:var(--pad-y) var(--pad-x); }
-    .section + .section { border-top:1px solid rgba(14,14,14,0.08); }
+    .section + .section { border-top:none; }
     .section-inner { max-width:640px; }
 
+    /* 공통 본문 */
+    .body-text { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.5; }
+
     /* ABOUT */
-    .about-body p { font-family:var(--f-body); font-weight:400; font-size:13px; color:rgba(14,14,14,0.8); line-height:1.55; }
-    .about-body p + p { margin-top:20px; }
+    .about-body p { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+    .about-body p + p { margin-top:6px; }
 
     /* MISSION */
-    .mission-lead { font-family:var(--f-title); font-weight:700; font-size:17px; line-height:1.2; letter-spacing:-0.01em; color:var(--ink); margin-bottom:20px; }
-    .mission-body p { font-family:var(--f-body); font-weight:400; font-size:13px; color:rgba(14,14,14,0.75); line-height:1.75; }
-    .mission-body p + p { margin-top:12px; }
+    .mission-lead { font-family:var(--f-body); font-weight:400; font-size:12px; line-height:1.6; color:rgba(14,14,14,0.75); margin-bottom:6px; }
+    .mission-body p { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+    .mission-body p + p { margin-top:6px; }
 
     /* VISION */
-    .vision-text p { font-family:var(--f-body); font-weight:400; font-size:13px; color:rgba(14,14,14,0.8); line-height:1.75; }
-    .vision-text p + p { margin-top:16px; }
-    .vision-text .vision-punch { font-family:var(--f-title); font-weight:700; font-size:15px; letter-spacing:-0.01em; color:var(--ink); margin-top:24px; }
+    .vision-text p { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+    .vision-text p + p { margin-top:6px; }
+    .vision-text .vision-punch { font-family:var(--f-body); font-weight:400; font-size:12px; line-height:1.6; color:rgba(14,14,14,0.75); margin-top:10px; }
 
-    /* WE LIVE — 1컬럼, 카드 배경 없음 */
+    /* WE LIVE,1컬럼, 카드 배경 없음 */
     .with-stack { display:flex; flex-direction:column; gap:36px; }
     .with-item { }
-    .with-tag { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); display:block; margin-bottom:10px; }
-    .with-body { font-family:var(--f-body); font-weight:400; font-size:13px; color:var(--ink); line-height:1.75; }
+    .with-tag { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(14,14,14,0.75); font-weight:400; display:block; margin-bottom:10px; }
+    .with-body { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
 
     /* OUR STORY */
-    .story-headline { font-family:var(--f-title); font-weight:700; font-size:17px; line-height:1.2; letter-spacing:-0.01em; color:var(--ink); margin-bottom:20px; }
-    .story-body p { font-family:var(--f-body); font-weight:400; font-size:13px; color:rgba(14,14,14,0.8); line-height:1.75; }
-    .story-body p + p { margin-top:16px; }
+    .story-stack { display:flex; flex-direction:column; gap:28px; }
+    .story-item-title { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(14,14,14,0.75); font-weight:400; margin-bottom:8px; }
+    .story-body p { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+    .story-body p + p { margin-top:4px; }
     .story-photo { width:100%; aspect-ratio:16/9; margin-top:40px; overflow:hidden; background:var(--ink); }
     .story-photo img { width:100%; height:100%; object-fit:cover; filter:grayscale(100%); display:block; }
 
@@ -183,9 +187,7 @@
 
 <!-- TOP PHOTO -->
 <div class="top-photo">
-  <div class="top-photo-placeholder">
-    <span>Photo — 준비 중</span>
-  </div>
+  <img src="About1.jpg" alt="흐름공동체">
 </div>
 
 <!-- ABOUT -->
@@ -193,8 +195,7 @@
   <div class="section-inner">
     <span class="label">About</span>
     <div class="about-body">
-      <p>흐름공동체는 일상 속에서 예수님을 따르는 사람들의 공동체입니다.</p>
-      <p>이웃들과 함께 밥을 먹고, 함께 걷고, 함께 여가시간을 보내며,<br>우리의 일상 속에서 복음을 흘려보냅니다.<br>내가 사는 동네가 우리의 자리입니다.</p>
+      <p>흐름공동체는 일상에서 예수님을 따르는 사람들입니다.<br>이웃과 함께 먹고, 걷고, 책을 보고, 여가를 나누며, 내가 사는 동네에서 복음을 살아갑니다.<br>The neighbourhood is gospel ground.</p>
     </div>
   </div>
 </section>
@@ -203,10 +204,8 @@
 <section class="section">
   <div class="section-inner">
     <span class="label">Mission</span>
-    <p class="mission-lead">예배는 하나님께. 삶은 세상을 향해.</p>
     <div class="mission-body">
-      <p>우리는 예수님을 믿고 예수님을 전합니다.</p>
-      <p>함께 모여 깊이 예배합니다.<br>그리고 각자의 동네로, 직장으로, 관계 속으로 흩어집니다.<br>복음은 일상을 통해 흐릅니다.</p>
+      <p>예배는 하나님께. 삶은 세상을 향해.<br>우리에게 예배는 주일 아침에서 시작해 한 주간의 일상으로 이어집니다.<br>동네에서, 직장에서, 식탁에서, 예수님을 따르는 삶이 복음의 현장입니다.<br>모이고, 흩어지고. 그렇게 복음이 도시를 흐릅니다.</p>
     </div>
   </div>
 </section>
@@ -216,9 +215,7 @@
   <div class="section-inner">
     <span class="label">Vision</span>
     <div class="vision-text">
-      <p>하나님 나라는 하나의 공동체에, 건물 안에 머물지 않습니다.<br>사람을 통해 움직입니다.</p>
-      <p>식탁을 통해, 일상을 통해, 동네를 통해.</p>
-      <p class="vision-punch">한 사람. 한 골목. 한 도시.<br>이렇게 퍼져나갑니다.</p>
+      <p>흐름공동체는 한 사람에서 시작합니다.<br>예수님을 따르는 삶이 골목으로, 식탁으로, 동네로 흘러갑니다.<br>한 사람. 한 골목. 한 도시.<br>복음을 사는 건강한 크리스천 라이프스타일로 이 도시를 채워갑니다.</p>
     </div>
   </div>
 </section>
@@ -230,15 +227,15 @@
     <div class="with-stack">
       <div class="with-item">
         <span class="with-tag">With God</span>
-        <p class="with-body">주일 아침만이 아닙니다.<br>매일의 식탁에서, 출근길에서, 잠들기 전에—<br>삶의 모든 순간이 하나님과 함께입니다.</p>
+        <p class="with-body">우리의 삶은 하나님을 향합니다.<br>식탁에서, 출근길에서, 잠들기 전에, 삶의 모든 순간이 하나님께로 향하는 예배입니다.</p>
       </div>
       <div class="with-item">
         <span class="with-tag">With Us</span>
-        <p class="with-body">누구든 앉을 수 있고,<br>있는 그대로 환영받는 자리.<br>우리는 그런 자리를 만들어 갑니다.</p>
+        <p class="with-body">우리는 서로의 편입니다.<br>함께 먹고, 달리고, 서로의 일상을 압니다.<br>기쁨도 무게도 같이 짊어지며,<br>서로를 지지하고 세워갑니다.</p>
       </div>
       <div class="with-item">
         <span class="with-tag">With City</span>
-        <p class="with-body">예수님을 믿는 사람들의 세상사는 이야기.<br>가장 재밌고, 가장 따뜻하게.<br>우리는 세상 속에서 살아갑니다.</p>
+        <p class="with-body">예수님을 믿는 사람들의 세상 사는 이야기.<br>우리는 각자의 동네에서 살아갑니다.<br>가장 재밌고, 가장 따뜻하게.</p>
       </div>
     </div>
   </div>
@@ -248,11 +245,25 @@
 <section class="section">
   <div class="section-inner">
     <span class="label">Our Story</span>
-    <h2 class="story-headline">레위의 식탁</h2>
-    <div class="story-body">
-      <p>예수님은<br>레위의 식탁에, 어부의 배에,<br>삭개오의 집에 계셨습니다.</p>
-      <p>예수님의 복음은 세상과 함께 했습니다.<br>우리의 복음은 왜 삶과 따로 흘러갈까?</p>
-      <p>그 질문이 Flowin' Hood가 됐습니다.</p>
+    <div class="story-stack">
+      <div>
+        <p class="story-item-title">Levi's Table</p>
+        <div class="story-body">
+          <p>예수님은 레위의 식탁에, 어부의 배에, 삭개오의 집에 계셨습니다.<br>복음은 늘 삶의 한가운데 있었습니다.</p>
+        </div>
+      </div>
+      <div>
+        <p class="story-item-title">The Question</p>
+        <div class="story-body">
+          <p>우리의 복음은 왜 삶과 따로 흘러갈까?<br>그 질문이 멈추지 않았습니다.</p>
+        </div>
+      </div>
+      <div>
+        <p class="story-item-title">Flowin'</p>
+        <div class="story-body">
+          <p>흐름에 몸을 맡기기로 했습니다.<br>신앙이 일상으로 흘러가는 삶을 원했던 사람들이 모였습니다.<br>그것이 Flowin' Hood가 됐습니다.</p>
+        </div>
+      </div>
     </div>
     <div class="story-photo">
       <!-- 공동체 사진 준비 중 -->
