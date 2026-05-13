@@ -96,7 +96,8 @@
     .with-stack { display:flex; flex-direction:column; gap:36px; }
     .with-item { }
     .with-tag { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(14,14,14,0.75); font-weight:400; display:block; margin-bottom:10px; }
-    .with-body { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+    .with-body { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; margin:0; }
+    .with-body + .with-body { margin-top:0; }
 
     /* OUR STORY */
     .story-stack { display:flex; flex-direction:column; gap:28px; }
@@ -221,15 +222,21 @@
     <div class="with-stack">
       <div class="with-item">
         <span class="with-tag">With God</span>
-        <p class="with-body">우리의 삶은 하나님을 향합니다.<br>식탁에서, 출근길에서, 잠들기 전에, 삶의 모든 순간이 하나님께로 향하는 예배입니다.</p>
+        <p class="with-body">우리의 삶은 하나님을 향합니다.</p>
+        <p class="with-body">식탁에서, 출근길에서, 잠들기 전에, 삶의 모든 순간이 하나님께로 향하는 예배입니다.</p>
       </div>
       <div class="with-item">
         <span class="with-tag">With Us</span>
-        <p class="with-body">우리는 서로의 편입니다.<br>함께 먹고, 달리고, 서로의 일상을 압니다.<br>기쁨도 무게도 같이 짊어지며,<br>서로를 지지하고 세워갑니다.</p>
+        <p class="with-body">우리는 서로의 편입니다.</p>
+        <p class="with-body">함께 먹고, 달리고, 서로의 일상을 압니다.</p>
+        <p class="with-body">기쁨도 무게도 같이 짊어지며,</p>
+        <p class="with-body">서로를 지지하고 세워갑니다.</p>
       </div>
       <div class="with-item">
         <span class="with-tag">With City</span>
-        <p class="with-body">예수님을 믿는 사람들의 세상 사는 이야기.<br>우리는 각자의 동네에서 살아갑니다.<br>가장 재밌고, 가장 따뜻하게.</p>
+        <p class="with-body">예수님을 믿는 사람들의 세상 사는 이야기.</p>
+        <p class="with-body">우리는 각자의 동네에서 살아갑니다.</p>
+        <p class="with-body">가장 재밌고, 가장 따뜻하게.</p>
       </div>
     </div>
   </div>
