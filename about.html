@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About,Flowin' Hood | 흐름공동체</title>
+  <meta name="description" content="흐름공동체는 일상 속에서 예수님을 따르는 사람들의 공동체입니다.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://flowinhood.com/about/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowinhood.com/about.html">
+  <meta property="og:title" content="About,Flowin' Hood">
+  <meta property="og:description" content="흐름공동체는 일상 속에서 예수님을 따르는 사람들의 공동체입니다.">
+  <meta property="og:image" content="https://flowinhood.com/og-image.jpg">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GmarketSans:wght@700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face { font-family:'Paperlogy'; src:url('/fonts/Paperlogy-3Light.ttf') format('truetype'); font-weight:300; }
+    @font-face { font-family:'Paperlogy'; src:url('/fonts/Paperlogy-4Regular.ttf') format('truetype'); font-weight:400; }
+    @font-face { font-family:'Paperlogy'; src:url('/fonts/Paperlogy-5Medium.ttf') format('truetype'); font-weight:500; }
+    @font-face { font-family:'Paperlogy'; src:url('/fonts/Paperlogy-6SemiBold.ttf') format('truetype'); font-weight:600; }
+    @font-face { font-family:'Paperlogy'; src:url('/fonts/Paperlogy-8ExtraBold.ttf') format('truetype'); font-weight:800; }
+
+    :root {
+      --ink:    #0E0E0E;
+      --paper:  #EDEAE4;
+      --grey:   #A8A6A1;
+      --mid:    #565656;
+      --f-title:'GmarketSans', 'Apple SD Gothic Neo', sans-serif;
+      --f-body: 'Paperlogy', 'Apple SD Gothic Neo', sans-serif;
+      --f-mono: 'IBM Plex Sans KR', 'IBM Plex Sans', sans-serif;
+      --nav-h:  64px;
+      --pad-x:  24px;
+      --pad-y:  80px;
+    }
+
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--paper); color:var(--ink); font-family:var(--f-body); font-size:12px; line-height:1.45; -webkit-font-smoothing:antialiased; }
+    a { text-decoration:none; color:inherit; }
+
+    /* NAV */
+    .nav { position:sticky; top:0; left:0; right:0; z-index:100; height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; padding:0 var(--pad-x); background:var(--paper); border-bottom:1px solid rgba(14,14,14,0.08); }
+    .nav-logo { display:flex; align-items:center; height:40px; }
+    .nav-logo svg { height:40px; width:auto; }
+    .nav-links { display:flex; align-items:center; gap:40px; list-style:none; }
+    .nav-links a { font-family:var(--f-body); font-weight:500; font-size:11px; letter-spacing:0.07em; color:var(--ink); text-transform:uppercase; transition:opacity 0.2s; }
+    .nav-links a:hover { opacity:0.45; }
+    .nav-links a.active { border-bottom:1px solid var(--ink); padding-bottom:1px; }
+    .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .nav-hamburger span { display:block; width:24px; height:1.5px; background:var(--ink); }
+    .nav-backdrop { position:fixed; inset:0; background:rgba(14,14,14,0.45); z-index:98; opacity:0; pointer-events:none; transition:opacity 0.35s; }
+    .nav-backdrop.open { opacity:1; pointer-events:auto; }
+    .nav-mobile { position:fixed; top:0; left:0; right:0; height:52svh; background:var(--paper); z-index:99; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:28px; transform:translateY(-100%); transition:transform 0.38s cubic-bezier(0.4,0,0.2,1); box-shadow:0 8px 40px rgba(14,14,14,0.15); }
+    .nav-mobile.open { transform:translateY(0); }
+    .nav-mobile a { font-family:var(--f-title); font-size:26px; color:var(--ink); letter-spacing:-0.01em; transition:opacity 0.2s; }
+    .nav-mobile a:hover { opacity:0.45; }
+    .nav-mobile-close { position:absolute; bottom:24px; left:50%; transform:translateX(-50%); font-family:var(--f-mono); font-size:10px; letter-spacing:0.1em; cursor:pointer; background:none; border:none; color:var(--grey); text-transform:uppercase; }
+
+    /* SECTION LABEL */
+    .label { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink); font-weight:700; display:block; margin-bottom:12px; }
+
+    /* TOP PHOTO */
+    .top-photo { width:100%; aspect-ratio:32/9; overflow:hidden; background:var(--mid); position:relative; }
+    .top-photo img { width:100%; height:100%; object-fit:cover; filter:grayscale(100%); display:block; }
+    .top-photo-placeholder { width:100%; height:100%; background:var(--ink); display:flex; align-items:center; justify-content:center; }
+    .top-photo-placeholder span { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(237,234,228,0.25); }
+
+    /* SECTIONS */
+    .section { background:var(--paper); padding:var(--pad-y) var(--pad-x); }
+    .section + .section { border-top:none; }
+    .section-inner { max-width:640px; }
+
+    /* 공통 본문 */
+    .body-text { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.5; }
+
+    /* ABOUT */
+    .about-body p { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+    .about-body p + p { margin-top:6px; }
+
+    /* MISSION */
+    .mission-lead { font-family:var(--f-body); font-weight:400; font-size:12px; line-height:1.6; color:rgba(14,14,14,0.75); margin-bottom:6px; }
+    .mission-body p { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+    .mission-body p + p { margin-top:6px; }
+
+    /* VISION */
+    .vision-text p { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+    .vision-text p + p { margin-top:6px; }
+    .vision-text .vision-punch { font-family:var(--f-body); font-weight:400; font-size:12px; line-height:1.6; color:rgba(14,14,14,0.75); margin-top:10px; }
+
+    /* WE LIVE,1컬럼, 카드 배경 없음 */
+    .with-stack { display:flex; flex-direction:column; gap:36px; }
+    .with-item { }
+    .with-tag { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(14,14,14,0.75); font-weight:400; display:block; margin-bottom:10px; }
+    .with-body { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+
+    /* OUR STORY */
+    .story-stack { display:flex; flex-direction:column; gap:28px; }
+    .story-item-title { font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(14,14,14,0.75); font-weight:400; margin-bottom:8px; }
+    .story-body p { font-family:var(--f-body); font-weight:400; font-size:12px; color:rgba(14,14,14,0.75); line-height:1.6; }
+    .story-body p + p { margin-top:4px; }
+    .story-photo { width:100%; aspect-ratio:16/9; margin-top:40px; overflow:hidden; background:var(--ink); }
+    .story-photo img { width:100%; height:100%; object-fit:cover; filter:grayscale(100%); display:block; }
+
+    /* FOOTER */
+    .footer { background:var(--ink); padding:16px var(--pad-x) 12px; }
+    .footer-top { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; padding-bottom:12px; border-bottom:1px solid rgba(237,234,228,0.1); }
+    .footer-logo svg { height:24px; width:auto; }
+    .footer-nav { display:flex; flex-direction:column; gap:4px; }
+    .footer-nav a { font-family:var(--f-body); font-weight:500; font-size:10px; letter-spacing:0.07em; text-transform:uppercase; color:rgba(237,234,228,0.5); transition:color 0.2s; }
+    .footer-nav a:hover { color:var(--paper); }
+    .footer-contact { display:flex; flex-direction:column; gap:4px; }
+    .footer-contact a { font-family:var(--f-body); font-weight:400; font-size:10px; color:rgba(237,234,228,0.5); display:flex; align-items:center; gap:5px; }
+    .footer-contact a:hover { color:var(--paper); }
+    .footer-bottom { padding-top:10px; display:flex; align-items:center; justify-content:space-between; }
+    .footer-copy { font-family:var(--f-mono); font-size:10px; letter-spacing:0.1em; color:var(--grey); text-transform:uppercase; }
+
+    @media (max-width:768px) {
+      :root { --pad-x:20px; --pad-y:64px; }
+      .nav-links { display:none; }
+      .nav-hamburger { display:flex; }
+      .top-photo { aspect-ratio:16/9; }
+      .footer-top { grid-template-columns:auto 1fr; grid-template-rows:auto auto; gap:6px 14px; padding-bottom:10px; align-items:start; }
+      .footer-logo { grid-column:1; grid-row:1; }
+      .footer-logo svg { height:36px; }
+      .footer-nav { grid-column:2; grid-row:1; flex-direction:row; flex-wrap:wrap; gap:6px 14px; }
+      .footer-contact { grid-column:1 / -1; grid-row:2; flex-direction:row; flex-wrap:wrap; gap:4px 12px; }
+      .footer-bottom { justify-content:center; gap:8px; padding-top:8px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="465.5 270.7 435.0 232.3">
+      <path d="M892.5,440.42c0,.77-.43,1.46-1.12,1.79-11.26,5.43-75.03,35.89-101.9,42.23-7.05,1.66-14.76,2.43-19.98-1.78-3.19-2.57-3.28-5.25-7-15-4.96-13-7.44-19.5-12-22-2.13-1.17-8.58-3.76-22,4,0,0-23.19,12.04-65,27-23.73,8.49-35.61,12.74-46,7-16.44-9.08-9.74-32.44-23-38-13.65-5.73-26.11,16.81-71,35-35.34,14.32-44.02,7-46,5-2.9-2.93-3.75-6.9-3.99-9.91,0-.06,0-.12,0-.18v-194.91c0-1.1.89-2,2-2h415c1.1,0,2,.89,2,2v159.75Z" fill="#0E0E0E"/>
+      <path fill="#EDEAE4" d="M509.39,295.84h34.05c.91,0,1.61.81,1.48,1.71l-1.7,11.81c-.11.74-.74,1.28-1.48,1.28h-17.35c-.74,0-1.37.55-1.48,1.28l-.47,3.24c-.13.9.57,1.71,1.48,1.71h12.43c.91,0,1.61.81,1.48,1.71l-1.37,9.47c-.11.74-.74,1.28-1.48,1.28h-13.3c-.74,0-1.37.55-1.48,1.28l-2.66,18.47c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+      <path fill="#EDEAE4" d="M551.92,295.84h14.11c.91,0,1.61.81,1.48,1.71l-5.24,36.3c-.13.9.57,1.71,1.48,1.71h17.26c.91,0,1.61.81,1.48,1.71l-1.7,11.81c-.11.74-.74,1.28-1.48,1.28h-34.83c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+      <path fill="#EDEAE4" d="M620.97,294.67c17.06,0,26.79,11.37,24.33,28.43s-15.47,28.43-32.53,28.43-26.79-11.37-24.33-28.43c2.46-17.06,15.47-28.43,32.53-28.43ZM614.95,336.34c6.62,0,11.67-5.3,12.82-13.24s-2.37-13.24-8.99-13.24-11.67,5.3-12.82,13.24c-1.15,7.94,2.37,13.24,8.99,13.24Z"/>
+      <path fill="#EDEAE4" d="M667.51,297.09l3.2,19.23c.25,1.48,2.27,1.72,2.85.34l8.46-19.91c.23-.55.78-.91,1.38-.91h13.13c.75,0,1.38.55,1.48,1.29l2.6,19.12c.2,1.49,2.22,1.78,2.84.42l9.09-19.96c.24-.53.78-.88,1.36-.88h15.18c1.11,0,1.83,1.16,1.35,2.15l-25.1,51.53c-.25.51-.77.84-1.35.84h-13.32c-.75,0-1.39-.56-1.48-1.31l-2.45-19.22c-.19-1.52-2.28-1.8-2.87-.39l-8.31,19.99c-.23.56-.78.92-1.38.92h-13.35c-.71,0-1.33-.5-1.47-1.2l-10.23-51.53c-.18-.93.52-1.79,1.47-1.79h15.45c.73,0,1.36.53,1.48,1.25Z"/>
+      <path fill="#EDEAE4" d="M735.11,295.84h14.11c.91,0,1.61.81,1.48,1.71l-7.44,51.53c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+      <path fill="#EDEAE4" d="M760.03,295.84h14.97c.54,0,1.04.29,1.3.76l12.32,21.69c.7,1.24,2.58.89,2.78-.53l2.98-20.64c.11-.74.74-1.28,1.48-1.28h14.11c.91,0,1.61.81,1.48,1.71l-7.44,51.53c-.11.74-.74,1.28-1.48,1.28h-14.97c-.54,0-1.04-.29-1.3-.76l-12.32-21.69c-.7-1.24-2.58-.89-2.78.53l-2.98,20.64c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+      <path fill="#EDEAE4" d="M500.26,359.12h14.11c.91,0,1.61.81,1.48,1.71l-2.54,17.61c-.13.9.57,1.71,1.48,1.71h14.11c.74,0,1.37-.55,1.48-1.28l2.66-18.47c.11-.74.74-1.28,1.48-1.28h14.11c.91,0,1.61.81,1.48,1.71l-7.44,51.53c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l2.54-17.61c.13-.9-.57-1.71-1.48-1.71h-14.11c-.74,0-1.37.55-1.48,1.28l-2.66,18.47c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+      <path fill="#EDEAE4" d="M585.2,357.95c17.06,0,26.79,11.37,24.33,28.43-2.46,17.06-15.47,28.43-32.53,28.43s-26.79-11.37-24.33-28.43c2.46-17.06,15.47-28.43,32.53-28.43ZM579.18,399.63c6.62,0,11.67-5.3,12.82-13.24s-2.37-13.24-8.99-13.24-11.67,5.3-12.82,13.24,2.37,13.24,8.99,13.24Z"/>
+      <path fill="#EDEAE4" d="M646.73,357.95c17.06,0,26.79,11.37,24.33,28.43s-15.47,28.43-32.53,28.43-26.79-11.37-24.33-28.43c2.46-17.06,15.47-28.43,32.53-28.43ZM640.71,399.63c6.62,0,11.67-5.3,12.82-13.24,1.15-7.94-2.37-13.24-8.99-13.24s-11.67,5.3-12.82,13.24,2.37,13.24,8.99,13.24Z"/>
+      <path fill="#EDEAE4" d="M679.17,360.41c.11-.74.74-1.28,1.48-1.28h21.29c17.06,0,26.96,10.2,24.5,27.26-2.46,17.06-15.31,27.26-32.36,27.26h-20.86c-.91,0-1.61-.81-1.48-1.71l7.44-51.53ZM696.21,398.85c6.62,0,11.56-4.52,12.7-12.46,1.15-7.94-2.49-12.46-9.11-12.46h-4.16c-.74,0-1.37.55-1.48,1.28l-3.17,21.93c-.13.9.57,1.71,1.48,1.71h3.72Z"/>
+      <rect fill="#EDEAE4" x="816.85" y="297.44" width="8.71" height="8.71" rx=".48" ry=".48" transform="translate(453.93 -492.29) rotate(45)"/>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/about" class="active">About</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="openNav()" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-backdrop" id="navBackdrop" onclick="closeNav()"></div>
+<div class="nav-mobile" id="mobileNav">
+  <a href="/about">About</a>
+  <button class="nav-mobile-close" onclick="closeNav()">Close ✕</button>
+</div>
+
+<script>
+  function openNav() {
+    document.getElementById('mobileNav').classList.add('open');
+    document.getElementById('navBackdrop').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+    document.getElementById('navBackdrop').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+
+<!-- TOP PHOTO -->
+<div class="top-photo">
+  <img src="/About1.jpg" alt="흐름공동체">
+</div>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="section-inner">
+    <span class="label">About</span>
+    <div class="about-body">
+      <p>흐름공동체는 일상에서 예수님을 따르는 사람들입니다.<br>이웃과 함께 먹고, 걷고, 책을 보고, 여가를 나누며, 내가 사는 동네에서 복음을 살아갑니다.<br>The neighbourhood is gospel ground.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section">
+  <div class="section-inner">
+    <span class="label">Mission</span>
+    <div class="mission-body">
+      <p>예배는 하나님께. 삶은 세상을 향해.<br>우리에게 예배는 주일 아침에서 시작해 한 주간의 일상으로 이어집니다.<br>동네에서, 직장에서, 식탁에서, 예수님을 따르는 삶이 복음의 현장입니다.<br>모이고, 흩어지고. 그렇게 복음이 도시를 흐릅니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="section">
+  <div class="section-inner">
+    <span class="label">Vision</span>
+    <div class="vision-text">
+      <p>흐름공동체는 한 사람에서 시작합니다.<br>예수님을 따르는 삶이 골목으로, 식탁으로, 동네로 흘러갑니다.<br>한 사람. 한 골목. 한 도시.<br>복음을 사는 건강한 크리스천 라이프스타일로 이 도시를 채워갑니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WE LIVE -->
+<section class="section">
+  <div class="section-inner">
+    <span class="label">We Live</span>
+    <div class="with-stack">
+      <div class="with-item">
+        <span class="with-tag">With God</span>
+        <p class="with-body">우리의 삶은 하나님을 향합니다.<br>식탁에서, 출근길에서, 잠들기 전에, 삶의 모든 순간이 하나님께로 향하는 예배입니다.</p>
+      </div>
+      <div class="with-item">
+        <span class="with-tag">With Us</span>
+        <p class="with-body">우리는 서로의 편입니다.<br>함께 먹고, 달리고, 서로의 일상을 압니다.<br>기쁨도 무게도 같이 짊어지며,<br>서로를 지지하고 세워갑니다.</p>
+      </div>
+      <div class="with-item">
+        <span class="with-tag">With City</span>
+        <p class="with-body">예수님을 믿는 사람들의 세상 사는 이야기.<br>우리는 각자의 동네에서 살아갑니다.<br>가장 재밌고, 가장 따뜻하게.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="section">
+  <div class="section-inner">
+    <span class="label">Our Story</span>
+    <div class="story-stack">
+      <div>
+        <p class="story-item-title">Levi's Table</p>
+        <div class="story-body">
+          <p>예수님은 레위의 식탁에, 어부의 배에, 삭개오의 집에 계셨습니다.<br>복음은 늘 삶의 한가운데 있었습니다.</p>
+        </div>
+      </div>
+      <div>
+        <p class="story-item-title">The Question</p>
+        <div class="story-body">
+          <p>우리의 복음은 왜 삶과 따로 흘러갈까?<br>그 질문이 멈추지 않았습니다.</p>
+        </div>
+      </div>
+      <div>
+        <p class="story-item-title">Flowin'</p>
+        <div class="story-body">
+          <p>흐름에 몸을 맡기기로 했습니다.<br>신앙이 일상으로 흘러가는 삶을 원했던 사람들이 모였습니다.<br>그것이 Flowin' Hood가 됐습니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="story-photo">
+      <!-- 공동체 사진 준비 중 -->
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="465.5 270.7 435.0 232.3">
+        <path d="M892.5,440.42c0,.77-.43,1.46-1.12,1.79-11.26,5.43-75.03,35.89-101.9,42.23-7.05,1.66-14.76,2.43-19.98-1.78-3.19-2.57-3.28-5.25-7-15-4.96-13-7.44-19.5-12-22-2.13-1.17-8.58-3.76-22,4,0,0-23.19,12.04-65,27-23.73,8.49-35.61,12.74-46,7-16.44-9.08-9.74-32.44-23-38-13.65-5.73-26.11,16.81-71,35-35.34,14.32-44.02,7-46,5-2.9-2.93-3.75-6.9-3.99-9.91,0-.06,0-.12,0-.18v-194.91c0-1.1.89-2,2-2h415c1.1,0,2,.89,2,2v159.75Z" fill="#EDEAE4"/>
+        <path fill="#0E0E0E" d="M509.39,295.84h34.05c.91,0,1.61.81,1.48,1.71l-1.7,11.81c-.11.74-.74,1.28-1.48,1.28h-17.35c-.74,0-1.37.55-1.48,1.28l-.47,3.24c-.13.9.57,1.71,1.48,1.71h12.43c.91,0,1.61.81,1.48,1.71l-1.37,9.47c-.11.74-.74,1.28-1.48,1.28h-13.3c-.74,0-1.37.55-1.48,1.28l-2.66,18.47c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+        <path fill="#0E0E0E" d="M551.92,295.84h14.11c.91,0,1.61.81,1.48,1.71l-5.24,36.3c-.13.9.57,1.71,1.48,1.71h17.26c.91,0,1.61.81,1.48,1.71l-1.7,11.81c-.11.74-.74,1.28-1.48,1.28h-34.83c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+        <path fill="#0E0E0E" d="M620.97,294.67c17.06,0,26.79,11.37,24.33,28.43s-15.47,28.43-32.53,28.43-26.79-11.37-24.33-28.43c2.46-17.06,15.47-28.43,32.53-28.43ZM614.95,336.34c6.62,0,11.67-5.3,12.82-13.24s-2.37-13.24-8.99-13.24-11.67,5.3-12.82,13.24c-1.15,7.94,2.37,13.24,8.99,13.24Z"/>
+        <path fill="#0E0E0E" d="M667.51,297.09l3.2,19.23c.25,1.48,2.27,1.72,2.85.34l8.46-19.91c.23-.55.78-.91,1.38-.91h13.13c.75,0,1.38.55,1.48,1.29l2.6,19.12c.2,1.49,2.22,1.78,2.84.42l9.09-19.96c.24-.53.78-.88,1.36-.88h15.18c1.11,0,1.83,1.16,1.35,2.15l-25.1,51.53c-.25.51-.77.84-1.35.84h-13.32c-.75,0-1.39-.56-1.48-1.31l-2.45-19.22c-.19-1.52-2.28-1.8-2.87-.39l-8.31,19.99c-.23.56-.78.92-1.38.92h-13.35c-.71,0-1.33-.5-1.47-1.2l-10.23-51.53c-.18-.93.52-1.79,1.47-1.79h15.45c.73,0,1.36.53,1.48,1.25Z"/>
+        <path fill="#0E0E0E" d="M735.11,295.84h14.11c.91,0,1.61.81,1.48,1.71l-7.44,51.53c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+        <path fill="#0E0E0E" d="M760.03,295.84h14.97c.54,0,1.04.29,1.3.76l12.32,21.69c.7,1.24,2.58.89,2.78-.53l2.98-20.64c.11-.74.74-1.28,1.48-1.28h14.11c.91,0,1.61.81,1.48,1.71l-7.44,51.53c-.11.74-.74,1.28-1.48,1.28h-14.97c-.54,0-1.04-.29-1.3-.76l-12.32-21.69c-.7-1.24-2.58-.89-2.78.53l-2.98,20.64c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+        <path fill="#0E0E0E" d="M500.26,359.12h14.11c.91,0,1.61.81,1.48,1.71l-2.54,17.61c-.13.9.57,1.71,1.48,1.71h14.11c.74,0,1.37-.55,1.48-1.28l2.66-18.47c.11-.74.74-1.28,1.48-1.28h14.11c.91,0,1.61.81,1.48,1.71l-7.44,51.53c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l2.54-17.61c.13-.9-.57-1.71-1.48-1.71h-14.11c-.74,0-1.37.55-1.48,1.28l-2.66,18.47c-.11.74-.74,1.28-1.48,1.28h-14.11c-.91,0-1.61-.81-1.48-1.71l7.44-51.53c.11-.74.74-1.28,1.48-1.28Z"/>
+        <path fill="#0E0E0E" d="M585.2,357.95c17.06,0,26.79,11.37,24.33,28.43-2.46,17.06-15.47,28.43-32.53,28.43s-26.79-11.37-24.33-28.43c2.46-17.06,15.47-28.43,32.53-28.43ZM579.18,399.63c6.62,0,11.67-5.3,12.82-13.24s-2.37-13.24-8.99-13.24-11.67,5.3-12.82,13.24,2.37,13.24,8.99,13.24Z"/>
+        <path fill="#0E0E0E" d="M646.73,357.95c17.06,0,26.79,11.37,24.33,28.43s-15.47,28.43-32.53,28.43-26.79-11.37-24.33-28.43c2.46-17.06,15.47-28.43,32.53-28.43ZM640.71,399.63c6.62,0,11.67-5.3,12.82-13.24,1.15-7.94-2.37-13.24-8.99-13.24s-11.67,5.3-12.82,13.24,2.37,13.24,8.99,13.24Z"/>
+        <path fill="#0E0E0E" d="M679.17,360.41c.11-.74.74-1.28,1.48-1.28h21.29c17.06,0,26.96,10.2,24.5,27.26-2.46,17.06-15.31,27.26-32.36,27.26h-20.86c-.91,0-1.61-.81-1.48-1.71l7.44-51.53ZM696.21,398.85c6.62,0,11.56-4.52,12.7-12.46,1.15-7.94-2.49-12.46-9.11-12.46h-4.16c-.74,0-1.37.55-1.48,1.28l-3.17,21.93c-.13.9.57,1.71,1.48,1.71h3.72Z"/>
+        <rect fill="#0E0E0E" x="816.85" y="297.44" width="8.71" height="8.71" rx=".48" ry=".48" transform="translate(453.93 -492.29) rotate(45)"/>
+      </svg>
+    </div>
+    <nav class="footer-nav">
+      <a href="/about">About</a>
+    </nav>
+    <div class="footer-contact">
+      <a href="https://instagram.com/flowinhood"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@flowinhood</a>
+      <a href="mailto:contact@flowinhood.com"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>contact@flowinhood.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Flowin' Hood · KR · 37°N</p>
+    <p class="footer-copy">흐름공동체</p>
+  </div>
+</footer>
+
+</body>
+</html>
