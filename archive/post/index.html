@@ -3,13 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Archive — Flowin' Hood</title>
-<meta name="description" content="흐름공동체의 기록들. 게더링, 예배, 일상의 순간들.">
-<meta property="og:title" content="Archive — Flowin' Hood">
-<meta property="og:description" content="흐름공동체의 기록들.">
-<meta property="og:url" content="https://flowinhood.com/archive">
-<meta property="og:type" content="website">
-<link rel="canonical" href="https://flowinhood.com/archive">
+<title>— 흐름 아카이브</title>
+<meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=GmarketSans:wght@700&family=IBM+Plex+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
@@ -48,37 +43,35 @@ img { display:block; max-width:100%; }
 .nav-mobile a:hover { opacity:0.45; }
 .nav-mobile-close { position:absolute; bottom:24px; left:50%; transform:translateX(-50%); font-family:var(--f-mono); font-size:var(--text-xs); letter-spacing:0.1em; cursor:pointer; background:none; border:none; color:var(--grey); text-transform:uppercase; }
 
-/* MAIN */
-.archive-main { padding:var(--pad-y) var(--pad-x) 80px; max-width:1200px; }
+/* POST LAYOUT */
+.post-wrap { max-width:800px; margin:0 auto; padding:48px var(--pad-x) 100px; }
 
-/* VERSE */
-.verse-block { margin-bottom:36px; }
-.verse-ref { font-family:var(--f-mono); font-size:var(--text-xs); letter-spacing:0.12em; text-transform:uppercase; color:var(--grey); margin-bottom:8px; }
-.verse-text { font-family:var(--f-body); font-size:12px; line-height:1.8; color:var(--mid); }
+.post-back { display:inline-flex; align-items:center; gap:6px; font-family:var(--f-mono); font-size:var(--text-xs); letter-spacing:0.12em; text-transform:uppercase; color:var(--grey); margin-bottom:48px; transition:color 0.2s; }
+.post-back:hover { color:var(--ink); }
+.post-back svg { width:12px; height:12px; }
 
-/* GRID */
-.archive-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.card { cursor:pointer; display:flex; flex-direction:column; }
-.card-img { width:100%; aspect-ratio:16/9; overflow:hidden; background:var(--ink); margin-bottom:12px; }
-.card-img img { width:100%; height:100%; object-fit:cover; filter:grayscale(100%); transition:filter 0.4s; display:block; }
-.card:hover .card-img img { filter:grayscale(55%); }
-.card-img-empty { width:100%; height:100%; background:rgba(14,14,14,0.06); }
-.card-date { font-family:var(--f-mono); font-size:var(--text-xs); color:var(--grey); margin-bottom:4px; }
-.card-title { font-family:var(--f-body); font-weight:500; font-size:13px; line-height:1.4; color:var(--ink); margin-bottom:5px; }
-.card-tag { font-family:var(--f-mono); font-size:var(--text-xs); letter-spacing:0.08em; text-transform:uppercase; color:var(--grey); }
+.post-meta { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.post-tag { font-family:var(--f-mono); font-size:var(--text-xs); letter-spacing:0.12em; text-transform:uppercase; color:var(--grey); border:1px solid rgba(14,14,14,0.2); padding:3px 9px; }
+.post-date { font-family:var(--f-mono); font-size:var(--text-xs); color:var(--grey); }
 
-/* SKELETON */
-.skeleton { animation:pulse 1.5s ease-in-out infinite; }
-.sk-img { width:100%; aspect-ratio:16/9; background:rgba(14,14,14,0.07); margin-bottom:12px; }
-.sk-line { height:10px; background:rgba(14,14,14,0.07); border-radius:1px; margin-bottom:6px; }
-.sk-line.w40 { width:40%; }
-.sk-line.w75 { width:75%; }
-.sk-line.w55 { width:55%; }
+.post-title { font-family:var(--f-title); font-size:clamp(24px,4vw,40px); font-weight:700; line-height:1.25; letter-spacing:-0.01em; margin-bottom:28px; }
+
+.post-body { font-family:var(--f-body); font-size:14px; line-height:2; color:var(--mid); white-space:pre-wrap; margin-bottom:60px; border-top:1px solid rgba(14,14,14,0.08); padding-top:28px; }
+
+/* PHOTOS */
+.photos-section { display:flex; flex-direction:column; gap:4px; }
+.photo-full { width:100%; }
+.photo-full img { width:100%; aspect-ratio:3/2; object-fit:cover; filter:grayscale(100%); display:block; }
+.photo-pair { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
+.photo-pair img { width:100%; aspect-ratio:1/1; object-fit:cover; filter:grayscale(100%); display:block; }
+
+/* loading skeleton */
+.post-skeleton { animation:pulse 1.5s ease-in-out infinite; }
+.sk-title { height:40px; background:rgba(14,14,14,0.07); width:60%; margin-bottom:16px; }
+.sk-body { height:14px; background:rgba(14,14,14,0.07); margin-bottom:8px; border-radius:1px; }
+.sk-body.w80 { width:80%; }
+.sk-body.w65 { width:65%; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.45} }
-
-/* EMPTY / ERROR */
-.state-msg { grid-column:1/-1; padding:80px 0; text-align:center; font-family:var(--f-mono); font-size:var(--text-xs); letter-spacing:0.1em; color:var(--grey); text-transform:uppercase; }
-
 
 /* FOOTER */
 .footer { background:var(--ink); padding:16px var(--pad-x) 12px; }
@@ -94,21 +87,17 @@ img { display:block; max-width:100%; }
 .footer-copy { font-family:var(--f-mono); font-size:var(--text-label); letter-spacing:0.1em; color:var(--grey); text-transform:uppercase; }
 
 @media (max-width:768px) {
-  :root { --pad-x:20px; --pad-y:32px; }
+  :root { --pad-x:20px; }
   .nav-links { display:none; }
   .nav-hamburger { display:flex; }
-  .archive-grid { grid-template-columns:1fr; }
   .footer { padding:12px var(--pad-x) 8px; }
   .footer-top { grid-template-columns:auto 1fr; grid-template-rows:auto auto; gap:6px 14px; padding-bottom:10px; align-items:start; }
   .footer-logo { grid-column:1; grid-row:1; }
   .footer-logo svg { height:36px; }
   .footer-nav { grid-column:2; grid-row:1; flex-direction:row; flex-wrap:wrap; gap:6px 14px; }
-  .footer-contact { grid-column:1 / -1; grid-row:2; flex-direction:row; flex-wrap:wrap; gap:4px 12px; }
+  .footer-contact { grid-column:1/-1; grid-row:2; flex-direction:row; flex-wrap:wrap; gap:4px 12px; }
   .footer-bottom { justify-content:center; padding-top:8px; }
-
-}
-@media (min-width:769px) and (max-width:1024px) {
-  .archive-grid { grid-template-columns:repeat(2,1fr); }
+  .photo-pair { grid-template-columns:1fr 1fr; }
 }
 </style>
 </head>
@@ -151,16 +140,17 @@ img { display:block; max-width:100%; }
   <button class="nav-mobile-close" onclick="closeNav()">Close</button>
 </div>
 
-<main class="archive-main">
-  <div class="verse-block">
-    <p class="verse-ref">Lk 5:29, NASB</p>
-    <p class="verse-text">And Levi gave a big reception for Him in his house;<br>and there was a large crowd of tax collectors<br>and other people who were reclining at the table with them.</p>
-  </div>
-
-  <div class="archive-grid" id="archiveGrid">
-    <div class="card skeleton"><div class="sk-img"></div><div class="sk-line w40"></div><div class="sk-line w75"></div><div class="sk-line w55"></div></div>
-    <div class="card skeleton"><div class="sk-img"></div><div class="sk-line w40"></div><div class="sk-line w75"></div><div class="sk-line w55"></div></div>
-    <div class="card skeleton"><div class="sk-img"></div><div class="sk-line w40"></div><div class="sk-line w75"></div><div class="sk-line w55"></div></div>
+<main>
+  <div class="post-wrap" id="postWrap">
+    <div class="post-skeleton">
+      <div style="height:11px;background:rgba(14,14,14,0.07);width:80px;margin-bottom:48px;border-radius:1px;"></div>
+      <div style="height:10px;background:rgba(14,14,14,0.07);width:120px;margin-bottom:14px;border-radius:1px;"></div>
+      <div class="sk-title"></div>
+      <div style="height:1px;background:rgba(14,14,14,0.08);margin-bottom:28px;"></div>
+      <div class="sk-body w80"></div>
+      <div class="sk-body w65"></div>
+      <div class="sk-body w80"></div>
+    </div>
   </div>
 </main>
 
@@ -207,7 +197,6 @@ img { display:block; max-width:100%; }
 <script>
 const API = 'https://api.flowinhood.com';
 
-// ── Nav ──
 function openNav() {
   document.getElementById('navMobile').classList.add('open');
   document.getElementById('navBackdrop').classList.add('open');
@@ -219,47 +208,70 @@ function closeNav() {
   document.body.style.overflow = '';
 }
 
-// ── Posts ──
 function fmtDate(iso) {
   if (!iso) return '';
   const d = new Date(iso);
   return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}`;
 }
 
-function renderCard(post) {
-  const card = document.createElement('div');
-  card.className = 'card';
-  const imgHtml = post.cover
-    ? `<img src="${post.cover}" alt="${post.title}" loading="lazy">`
-    : `<div class="card-img-empty"></div>`;
-  card.innerHTML = `
-    <div class="card-img">${imgHtml}</div>
-    <p class="card-date">${fmtDate(post.date || post.created_at)}</p>
-    <p class="card-title">${post.title || ''}</p>
-    <p class="card-tag">${post.tag || ''}</p>
-  `;
-  card.addEventListener('click', () => { window.location.href = `/archive/post/?id=${post.id}`; });
-  return card;
+function renderPhotos(images) {
+  if (!images || !images.length) return '';
+  let html = '<div class="photos-section">';
+  let i = 0;
+  while (i < images.length) {
+    html += `<div class="photo-full"><img src="${images[i]}" alt="" loading="lazy"></div>`;
+    i++;
+    if (i < images.length) {
+      html += '<div class="photo-pair">';
+      html += `<img src="${images[i]}" alt="" loading="lazy">`;
+      i++;
+      if (i < images.length) {
+        html += `<img src="${images[i]}" alt="" loading="lazy">`;
+        i++;
+      }
+      html += '</div>';
+    }
+  }
+  html += '</div>';
+  return html;
 }
 
-async function loadPosts() {
-  const grid = document.getElementById('archiveGrid');
+async function loadPost() {
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  const wrap = document.getElementById('postWrap');
+
+  if (!id) {
+    wrap.innerHTML = '<p style="font-family:var(--f-mono);font-size:10px;letter-spacing:0.1em;color:var(--grey);text-transform:uppercase;padding:80px 0;">게시물을 찾을 수 없습니다.</p>';
+    return;
+  }
+
   try {
-    const res = await fetch(`${API}/posts`);
+    const res = await fetch(`${API}/posts/${id}`);
     if (!res.ok) throw new Error();
-    const posts = await res.json();
-    grid.innerHTML = '';
-    if (!posts.length) {
-      grid.innerHTML = '<p class="state-msg">아직 기록이 없습니다.</p>';
-      return;
-    }
-    posts.forEach(p => grid.appendChild(renderCard(p)));
+    const post = await res.json();
+
+    document.title = `${post.title} — 흐름 아카이브`;
+
+    wrap.innerHTML = `
+      <a href="/archive" class="post-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="10,3 5,8 10,13"/></svg>
+        Archive
+      </a>
+      <div class="post-meta">
+        ${post.tag ? `<span class="post-tag">${post.tag}</span>` : ''}
+        <span class="post-date">${fmtDate(post.date || post.created_at)}</span>
+      </div>
+      <h1 class="post-title">${post.title || ''}</h1>
+      ${post.body ? `<p class="post-body">${post.body}</p>` : ''}
+      ${renderPhotos(post.images)}
+    `;
   } catch {
-    grid.innerHTML = '<p class="state-msg">기록을 불러올 수 없습니다.</p>';
+    wrap.innerHTML = '<p style="font-family:var(--f-mono);font-size:10px;letter-spacing:0.1em;color:var(--grey);text-transform:uppercase;padding:80px 0;">기록을 불러올 수 없습니다.</p>';
   }
 }
 
-loadPosts();
+loadPost();
 </script>
 </body>
 </html>
